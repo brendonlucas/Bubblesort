@@ -1,0 +1,54 @@
+# Algoritimo Bubble Sort
+# 858 cliques para o termino do algoritimo.
+			lw 1,0,posi
+			lw 2,0,neg	 
+        	addi 3,0,1			 
+enquanto:	beq 0,3,fim
+			lw 4,0,lenvet	
+			addi 3,0,0				
+inicio:		lw 5,4,lenvet			
+			addi 4,4,-1			
+			lw 6,4,lenvet			
+			nand 5,5,5			
+			addi 5,5,1			
+			add 6,6,5			
+			nand 6,2,6	
+			beq 1,6,cont
+            nand 5,5,5			
+            addi 5,5,1			
+            lw 6,4,lenvet		
+            sw 5,4,lenvet			
+            addi 4,4,1
+            sw 6,4,lenvet			
+            addi 4,4,-1
+			addi 3,0,1			
+cont:       addi 7,0,1			
+			beq 7,4,enquanto
+            beq 0,0,inicio		
+fim:	lw 1,0,v1 #mostra no reg 1 o valor de v1
+            lw 2,0,v2 #mostra no reg 2 o valor de v2
+            lw 3,0,v3 #mostra no reg 3 o valor de v3
+            lw 4,0,v4 #mostra no reg 4 o valor de v4
+            lw 5,0,v5 #mostra no reg 5 o valor de v5
+            lw 6,0,v6 #mostra no reg 6 o valor de v6
+            lw 7,0,v7 #mostra no reg 7 o valor de v7
+            lw 1,0,v8 #mostra no reg 1 o valor de v8
+            lw 2,0,v9 #mostra no reg 2 o valor de v9
+            lw 3,0,v10 #mostra no reg 3 o valor de v10
+fimalg:		halt
+            
+            
+neg: 	.fill -32768  
+posi: 	.fill 32767
+lenvet:	.fill 10 #tamanho do vetor
+# vetor
+v1:		.fill 4
+v2:		.fill 7
+v3:		.fill 1
+v4:		.fill 20
+v5:		.fill 3
+v6:		.fill 5
+v7:		.fill 15
+v8:		.fill 2
+v9:		.fill 12
+v10:	.fill 17
